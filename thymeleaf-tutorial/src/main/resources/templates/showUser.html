@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Of Students : </title>
+</head>
+<body>
+    <table border="5px">
+        <tr>
+            <th>Sr No.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Gender</th>
+            <th>Eligiblity</th>
+        </tr>
+        <tr th:each="user, stateVar : ${users}">
+            <th th:text="${stateVar.count}"></th>
+            <th th:text="${user.name}"></th>
+            <th th:text="${user.email}"></th>
+            <th th:text="${user.role}"></th>
+            <th th:text="${user.gender}"></th>
+            <td>
+                <a th:href="@{/update}" th:if="${user.role} == 'ADMIN'">Update</a>
+                <a th:href="@{/delete}" th:if="${user.role} == 'ADMIN'">Delete</a>
+                <a th:href="@{/view}" th:if="${user.role} == 'USER'">View</a>
+                <a th:href="@{/view}" th:if="${user.role} == 'ADMIN'">View</a>
+            </td>
+        </tr>
+        
+    </table>
+</body>
+</html>

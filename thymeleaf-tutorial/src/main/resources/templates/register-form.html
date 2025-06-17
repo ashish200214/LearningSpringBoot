@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Form</title>
+  </head>
+  <body>
+    <div align="center">
+      <div style="border-style: solid; width: 500px">
+        <h1>User Registeration Form</h1>
+        <form th:action="@{/register/save}" th:object="${user}" method="post">
+          <label for="">Full Name</label>
+          <input type="text" th:field="*{name}" /> <br> <br>
+
+          <label>Email</label>
+          <input type="email" th:field="*{email}"> <br> <br>
+
+          <label>Password</label>
+          <input type="password" th:field="*{password}"><br> <br>
+
+          <label>Gender</label> <br><br>
+          Male<input type="radio" value="Male" name="gender" th:field="*{gender}"> 
+          Female<input type="radio" value="Female" name="gender" th:field="*{gender}">  
+          
+          <br><br>
+          <label>Address</label>
+          <textarea rows="5" cols="25" th:field="*{address}"></textarea><br> <br>
+          <label>Profession</label>
+          <br><br>
+          <select th:field="*{profession}">
+        model.addAttribute("listProfession", list);
+            <option th:each="i:${listProfession}" th:value="${i}" th:text="${i}"></option>
+          </select>
+
+          <br><br>
+
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
