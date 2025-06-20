@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Form</title>
+  <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+  />
+</head>
+<body class="bg-light">
+<div class="container my-4">
+  <div class="bg-primary text-white p-4 rounded-4 shadow-sm mb-4">
+    <h1 class="mb-0">All Patients Details</h1>
+  </div>
+
+  <!-- Search Patient Form -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <form method="post" th:object="${search}" th:action="@{/searchSubmit}">
+        <div class="row g-3 align-items-center">
+          <div class="col-auto">
+            <label for="mobileNo" class="col-form-label">Mobile No</label>
+          </div>
+          <div class="col-auto">
+            <input
+                    th:field="*{mobileNo}"
+                    type="text"
+                    class="form-control"
+                    id="mobileNo"
+                    placeholder="Enter 10-digit no"
+                    pattern="\d{10}"
+                    maxlength="10"
+                    minlength="10"
+                    required
+            />
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-warning">Search Patient</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Patient Table -->
+  <div class="card shadow-sm">
+    <div class="card-body p-0">
+      <table class="table table-hover table-bordered mb-0">
+        <thead class="table-light">
+        <tr>
+          <th>Patient ID</th>
+          <th>Patient Name</th>
+          <th>Patient Address</th>
+          <th>Patient Mobile No</th>
+          <th>Operations</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="patient : ${patients}">
+          <td th:text="${patient.patientId}"></td>
+          <td th:text="${patient.patientName}"></td>
+          <td th:text="${patient.address}"></td>
+          <td th:text="${patient.mobileNo}"></td>
+          <td>
+            <a class="btn btn-danger btn-sm" th:href="@{/delete/{id}(id=${patient.patientId})}">
+              Delete
+            </a>
+            <a class="btn btn-secondary btn-sm" th:href="@{/update/{id}(id=${patient.patientId})}">
+              Update
+            </a>
+            <a class="btn btn-success btn-sm" th:href="@{/appointment/{id}(id=${patient.patientId})}">
+              Take Appointment
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>
