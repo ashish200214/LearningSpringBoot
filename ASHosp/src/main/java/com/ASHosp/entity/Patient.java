@@ -1,12 +1,11 @@
 package com.ASHosp.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -20,6 +19,9 @@ public class Patient {
     private String patientName;
     private String address;
     private String mobileNo;
+
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<Appointment> appointment;
 
 
 }

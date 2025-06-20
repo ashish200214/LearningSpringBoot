@@ -17,12 +17,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Appointment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private LocalDate date;
     private LocalTime time;
-
+    private String doctorName;
     @ManyToOne
     @JoinColumn(name="patientId")
     private Patient patient;

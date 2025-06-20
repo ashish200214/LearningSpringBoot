@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ASHosp.entity.Patient;
 import com.ASHosp.services.ServiceLayerPatient;
-
+import com.ASHosp.entity.Search;
 
 
 @Controller
@@ -30,11 +30,12 @@ public class homePageController {
     @GetMapping("/display")
     public ModelAndView goToDisplayPage() {
         ModelAndView mv = new ModelAndView("display");
-
         mv.addObject("patients", service.getAllPatient());
+        mv.addObject("search",new Search());
         return mv;
     }
-    
+
+
 
 
     

@@ -1,4 +1,12 @@
 package com.ASHosp.entity;
+public class Search{
+    private String mobileNo;
 
-public class Search {
+    public void setMobileNo(String mobileNo) {
+        this.mobileNo = mobileNo;
+    }
+
+    public String getMobileNo() {
+        return mobileNo;
+    }
 }

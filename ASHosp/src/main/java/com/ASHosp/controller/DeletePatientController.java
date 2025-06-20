@@ -13,7 +13,7 @@ public class DeletePatientController {
     private ServiceLayerPatient service;
     @GetMapping("/delete/{id}")
     public String deletePatient(@PathVariable int id){
-        service.deletePatientById(id);
+        service.delete(id);
         return "redirect:/display";
     }
 }

@@ -26,8 +26,17 @@ public class ServiceLayerPatient {
         patientRepo.deleteById(id);
     }
 
+    public void delete(int id){
+        Patient patient = patientRepo.findById(id).orElse(null);
+        patientRepo.delete(patient);
+    }
+
     public Patient getPatientById(int id) {
         return patientRepo.findById(id).orElse(null);
+    }
+
+    public List<Patient> searchPatientByMobileNo(String mobileno) {
+        return patientRepo.findAllByMobileNo(mobileno).orElse(null);
     }
 
 }

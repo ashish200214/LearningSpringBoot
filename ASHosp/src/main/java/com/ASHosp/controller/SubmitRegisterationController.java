@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ASHosp.entity.Patient;
 import com.ASHosp.services.ServiceLayerPatient;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -17,13 +18,12 @@ public class SubmitRegisterationController {
     @Autowired
     ServiceLayerPatient service;
     @PostMapping("/submit_registerationForm")
-    public ModelAndView submitRegisteration(@ModelAttribute Patient patient) {
-        ModelAndView mv = new ModelAndView("display");
-        
+    public String submitRegisteration(@ModelAttribute Patient patient, RedirectAttributes attributes) {
       service.registerPatient(patient);
     List<Patient> patients = service.getAllPatient();
-    mv.addObject("patients", patients);
-    return mv;
+    attributes.addFlashAttribute("patients",patients);
+    return "redirect:/display";
+
     }   
     
 }
