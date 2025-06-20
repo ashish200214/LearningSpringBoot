@@ -1,11 +1,9 @@
 package com.ASHosp.controller;
 
-import com.ASHosp.entity.Appointment;
 import com.ASHosp.entity.Patient;
 import com.ASHosp.entity.Search;
 import com.ASHosp.services.ServiceLayerPatient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
