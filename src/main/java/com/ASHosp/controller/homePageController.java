@@ -34,9 +34,5 @@ public class homePageController {
         mv.addObject("search",new Search());
         return mv;
     }
-
-
-
-
-    
+   
 }
