@@ -8,6 +8,7 @@ public class AsHospApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AsHospApplication.class, args);
+		System.out.println("Hello2");
 	}
 
 }
