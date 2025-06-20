@@ -2,7 +2,6 @@ package com.ASHosp.services;
 
 import java.util.List;
 
-import com.ASHosp.entity.Patient;
 import com.ASHosp.entity.Search;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
