@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error - User Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #dc3545;
+            font-size: 36px;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        img {
+            width: 150px;
+            height: auto;
+        }
+        .links {
+            margin-top: 30px;
+        }
+        .links a {
+            font-size: 18px;
+            margin: 10px 15px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/download.png" alt="Error Image">
+        <h1>User Doesn't Exist...</h1>
+        <p>We couldn't find the user you were searching for. Please check the details and try again.</p>
+        
+        <div class="links">
+            <a th:href="@{/asent}">Go to Welcome Page</a>
+            <a href="/asent/search">Try Searching Again</a>
+        </div>
+    </div>
+</body>
+</html>

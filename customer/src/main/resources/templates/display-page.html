@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Information</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 py-10">
+
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 style="color:greenyellow" th:if="${msg_update!=null}"></h2>
+        <h1 class="text-3xl font-semibold text-center text-gray-800 mb-6">Display Information of User</h1>
+        <div class="text-center mb-6">
+            <a th:href="@{/asent/search}" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search Customer</a>
+        </div>
+        
+        <div class="text-center mb-6">
+            <a th:href="@{/asent/createNewCustomer}" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create New Customer</a>
+        </div>
+        <div class="overflow-x-auto bg-white shadow-lg rounded-lg">
+            <table class="min-w-full table-auto">
+                <thead class="bg-gray-800 text-white">
+                    <tr>
+                        <th class="py-2 px-4 text-left">ID</th>
+                        <th class="py-2 px-4 text-left">Customer Name</th>
+                        <th class="py-2 px-4 text-left">Address</th>
+                        <th class="py-2 px-4 text-left">Whatsapp No</th>
+                        <th class="py-2 px-4 text-left">Requirements</th>
+                        
+                        <th class="py-2 px-4 text-left">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="customer : ${customers}" class="border-t">
+                        <td class="py-2 px-4" th:text="${customer.id}"></td>
+                        <td class="py-2 px-4" th:text="${customer.name}"></td>
+                        <td class="py-2 px-4" th:text="${customer.address}"></td>
+                        <td class="py-2 px-4" th:text="${customer.whatappNo}"></td>
+                        <td class="py-2 px-4" th:text="${customer.requirements}"></td>
+                        <td><a th:href="@{/asent/delete{id} (id=${customer.id})}"><button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Delete</button>
+                        </a></button>
+                        <a th:href="@{/asent/updateUser/{id} (id=${customer.id})}"><button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
+                        </a>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    
+    <div class="text-center mb-6 mt-5">
+        <a th:href="@{/asent/displayAll(pageNo=${nextPage})}" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Next</a>
+    </div>
+</body>
+</html>
