@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="034a6cd5-2c5a-4270-8a39-eef6e7137c12" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/practise_of_restapi/React JS/customer-frontend" beforeDir="false" afterPath="$PROJECT_DIR$/practise_of_restapi/React JS/customer-frontend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practise_of_restapi/React JS/customer-frontend/src/Display.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/practise_of_restapi/React JS/customer-frontend/src/Display.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2yxYDKU5vaVGOeunaj1OJ0ySb2a" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/media/ashish/Projects/Learning spring boot/Learning spring boot"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="034a6cd5-2c5a-4270-8a39-eef6e7137c12" name="Changes" comment="" />
+      <created>1750777571812</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750777571812</updated>
+    </task>
+    <servers />
+  </component>
+</project>
